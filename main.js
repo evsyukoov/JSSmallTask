@@ -20,13 +20,13 @@ function findMaxProductShop()
     let objects = obj['stock']['stocks']['34'];
     let maxKey = Object.entries(objects)[0][0];
     let maxVal = Number(Object.entries(objects)[0][1]);
-    for (let [key, val] of Object.entries(objects))
+    Object.entries(objects).forEach(function ([key, val])
     {
         if (Number(val) > maxVal) {
             maxVal = Number(val);
             maxKey = key;
         }
-    }
+    });
     let result = {};
     result[maxKey]= String(maxVal);
     return result;
